@@ -5,6 +5,7 @@
 *migracjeCsvProcedures/*
 *.env
 xlsxToMigrate/*
+!xlsxToMigrate/.gitkeep
 *errorLogs/*
 *0.Archiwum/*
 util/0. Archiwum/

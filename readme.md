@@ -37,6 +37,12 @@ examples in removerWybrana.js
 
 
 
+migration from .xlsx files:
+connectorXlsx - it take .xlsx file and treat it like a table in SQL, just use it in databaseFrom and use correct names of the column and put file to folder xlsxToMigrate
+
+
+
+
 
 
 Just use one of the programApi and run like in package.json
