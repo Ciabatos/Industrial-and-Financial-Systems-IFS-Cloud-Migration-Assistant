@@ -1,0 +1,68 @@
+import {toApiNew} from '../util/toApiNew.js'
+import {connectorDev } from "../db/connectorDev.js";
+import {connectorProd } from "../db/connectorProd.js";
+
+async function initialDataToDev() {
+    try {
+
+
+ 
+// await toApiNew(connectorProd,connectorDev,`SELECT UNIT_CODE,DESCRIPTION  FROM  ISO_UNIT`,'ISO_UNIT',1)
+await toApiNew(connectorProd,connectorDev,
+
+    `
+    SELECT 
+PART_NO
+,DESCRIPTION
+,STD_NAME_ID
+,UNIT_CODE
+,LOT_TRACKING_CODE
+,LOT_TRACKING_CODE_DB
+,SERIAL_RULE
+,SERIAL_RULE_DB
+,SERIAL_TRACKING_CODE
+,SERIAL_TRACKING_CODE_DB
+,ENG_SERIAL_TRACKING_CODE
+,ENG_SERIAL_TRACKING_CODE_DB
+,CONFIGURABLE
+,CONFIGURABLE_DB
+,CONDITION_CODE_USAGE
+,CONDITION_CODE_USAGE_DB
+,SUB_LOT_RULE
+,SUB_LOT_RULE_DB
+,LOT_QUANTITY_RULE
+,LOT_QUANTITY_RULE_DB
+,POSITION_PART
+,POSITION_PART_DB
+,CATCH_UNIT_ENABLED_DB
+,MULTILEVEL_TRACKING
+,MULTILEVEL_TRACKING_DB
+,COMPONENT_LOT_RULE
+,COMPONENT_LOT_RULE_DB
+,STOP_ARRIVAL_ISSUED_SERIAL_DB
+,WEIGHT_NET
+,UOM_FOR_WEIGHT_NET
+,FREIGHT_FACTOR
+,ALLOW_AS_NOT_CONSUMED_DB
+,RECEIPT_ISSUE_SERIAL_TRACK_DB
+,STOP_NEW_SERIAL_IN_RMA_DB
+,INPUT_UNIT_MEAS_GROUP_ID  
+    FROM  PART_CATALOG
+    WHERE rownum <= 20
+    `
+    
+    ,'PART_CATALOG',1)
+
+
+
+
+
+
+} catch (error) {
+    console.error('Error occurred during execution:', error);
+}
+}
+
+
+
+initialDataToDev();

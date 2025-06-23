@@ -1,0 +1,15 @@
+
+loginIfs = ''
+loginOldDatabase = ''
+
+hasloDev = ''
+hasloProd = ''
+hasloTest = ''
+hasloCfg = ''
+hasloOldDatabase = ''
+
+connectStringCfg = ""
+connectStringProd = ""
+connectStringTest =""
+connectStringOldDatabase = ""
+connectStringDev  =""

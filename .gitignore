@@ -1,0 +1,12 @@
+*node_modules/*
+.vscode/
+*.HISTORY/*
+*migracjeCsv/*
+*migracjeCsvProcedures/*
+*.env
+xlsxToMigrate/*
+*errorLogs/*
+*0.Archiwum/*
+util/0. Archiwum/
+db/0.Archiwum/
+Run.bat
