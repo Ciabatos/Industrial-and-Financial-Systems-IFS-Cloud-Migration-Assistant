@@ -28,7 +28,9 @@
     "inserterCech": "node --max-old-space-size=16384 programApi/inserterCech.js",
     "migracjaKorekty": "node --max-old-space-size=16384 programApi/migracjaKorekty.js 286963",
     "initialDataToDev": "node --max-old-space-size=16384 programApi/initialDataToDev.js",
-    "updaterJoinWybrana": "node --max-old-space-size=16384 programApi/updaterJoinWybrana.js"
+    "updaterJoinWybrana": "node --max-old-space-size=16384 programApi/updaterJoinWybrana.js",
+    "updaterApiHardUpdate": "node --max-old-space-size=16384 programApi/updaterApiHardUpdate.js"
+
   },
   "devDependencies": {
     "prettier": "3.3.2"

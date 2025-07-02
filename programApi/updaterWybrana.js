@@ -4508,7 +4508,7 @@ AND MCH_CODE IS NULL
 
 
 
-// await toApiModify(connectorProd,connectorProd,
+// await toApiModify(connectorCfg,connectorCfg,
 //     `
 // SELECT 
 // T1.ORDER_NO,
@@ -4531,6 +4531,46 @@ AND MCH_CODE IS NULL
 
 
 
+
+// await toApiModify(connectorProd,connectorProd, `SELECT CONTRACT ,PART_NO ,ROUTING_REVISION ,BOM_TYPE_DB ,ALTERNATIVE_NO ,OPERATION_ID ,'0.001' AS MACH_RUN_FACTOR FROM ROUTING_OPERATION WHERE CONTRACT = 'KRLAN' AND WORK_CENTER_NO = 'KOOP1' AND MACH_RUN_FACTOR != 0.001` ,'ROUTING_OPERATION','CONTRACT;PART_NO;ROUTING_REVISION;BOM_TYPE_DB;ALTERNATIVE_NO;OPERATION_ID',1)
+    
+
+
+
+
+// await toApiModify(connectorProd,connectorProd,
+//     `
+// SELECT  
+// T1.c_routing_efficiency_id
+// ,0.001 AS C_WYDAJNOSC
+// ,3 AS C_UNIT_MEASURE_DB
+// FROM C_ROUTING_EFFICIENCY_CONF t1
+// where t1.work_center_no = 'KOOP1'
+// AND C_WYDAJNOSC != 0.001
+
+//     `
+//     ,'C_ROUTING_EFFICIENCY_CONF','C_ROUTING_EFFICIENCY_ID',1)
+
+
+
+
+// await toApiModify(connectorCfg,connectorCfg,
+//     `
+// SELECT 
+// T1.TRANSACTION_ID
+// ,'DADA' AS SOURCE
+// FROM INVENTORY_TRANSACTION_HIST2 t1
+// WHERE T1.TRANSACTION_ID = 121230
+
+//     `
+//     ,'inventory_transaction_hist','TRANSACTION_ID',1)
+
+
+await toApiModify(connectorXlsx,connectorProd,
+            `Raport-1`
+            ,'ROUTING_OPERATION'
+            ,'CONTRACT;PART_NO;ROUTING_REVISION;BOM_TYPE_DB;ALTERNATIVE_NO;OPERATION_ID'
+            ,1)
 
 
 } catch (error) {
